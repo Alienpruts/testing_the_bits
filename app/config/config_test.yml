@@ -1,0 +1,31 @@
+imports:
+    - { resource: config_dev.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    profiler:
+        collect: false
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+swiftmailer:
+    disable_delivery: true
+
+services:
+    _defaults:
+        public: true
+
+    test.AppBundle\Service\EnclosureBuilderService: '@AppBundle\Service\EnclosureBuilderService'
+
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        url: 'sqlite:///%kernel.project_dir%/var/data/test.sqlite'
+        path: 'sqlite:///%kernel.project_dir%/var/data/test.sqlite'
+
+liip_functional_test:
+    cache_sqlite_db: true
