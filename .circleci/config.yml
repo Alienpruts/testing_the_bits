@@ -28,6 +28,8 @@ jobs:
 
       - run: composer install -n --prefer-dist
 
+      - run: mkdir var/data
+
       - save_cache:
           paths:
             - ./vendor
