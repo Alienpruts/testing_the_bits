@@ -83,7 +83,7 @@ class DefaultControllerTest extends WebTestCase
         $client->submit($form);
 
         $this->assertContains(
-            'Grew a large herbivore in enclosure #5',
+            'Grew a large herbivore in enclosure #3',
             $client->getResponse()->getContent()
         );
 
